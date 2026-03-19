@@ -44,6 +44,8 @@ return () => clearTimeout(timeout);
 
 }, []);
 
+const BASE_URL = "https://healthreport-ai.onrender.com";
+
 const uploadFile = async () => {
 
 if (!file) {
@@ -56,7 +58,7 @@ document.getElementById("loader").style.display = "block";
 let formData = new FormData();
 formData.append("file", file);
 
-let response = await fetch("http://127.0.0.1:5000/analyze", {
+let response = await fetch(`${BASE_URL}/analyze`, {
 method: "POST",
 body: formData
 });
@@ -72,7 +74,9 @@ document.getElementById("loader").style.display = "none";
 
 const askAI = async () => {
 
-let response = await fetch("http://127.0.0.1:5000/chat", {
+    
+
+let response = await fetch(`${BASE_URL}/chat`, {
 method: "POST",
 headers: {
 "Content-Type": "application/json"
