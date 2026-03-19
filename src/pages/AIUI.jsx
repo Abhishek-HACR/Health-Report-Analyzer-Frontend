@@ -131,7 +131,7 @@ return (
 <input
 type="file"
 id="fileInput"
-accept="application/pdf,.pdf"
+accept=".pdf,application/pdf"
 onChange={(e) => setFile(e.target.files[0])}
 />
 
